@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Academia da Aprendizagem</title>
+
+<style>
+
+:root{
+    --azul:#0057b8;
+    --azul-claro:#00a6e7;
+    --cinza:#f4f6f9;
+    --texto:#2d3748;
+    --branco:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:var(--cinza);
+    color:var(--texto);
+}
+
+header{
+    background:linear-gradient(135deg,var(--azul),var(--azul-claro));
+    color:white;
+    padding:80px 20px;
+    text-align:center;
+}
+
+header h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+header p{
+    font-size:1.2rem;
+    max-width:800px;
+    margin:auto;
+}
+
+.search-box{
+    margin-top:30px;
+}
+
+.search-box input{
+    width:100%;
+    max-width:600px;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    font-size:1rem;
+}
+
+main{
+    max-width:1200px;
+    margin:auto;
+    padding:50px 20px;
+}
+
+.section-title{
+    margin-bottom:30px;
+    text-align:center;
+}
+
+.section-title h2{
+    color:var(--azul);
+    margin-bottom:10px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:16px;
+    padding:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+    cursor:pointer;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    color:var(--azul);
+    margin-bottom:10px;
+}
+
+.card p{
+    line-height:1.5;
+}
+
+.banner{
+    margin:60px 0;
+    background:white;
+    padding:40px;
+    border-radius:16px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.banner h2{
+    color:var(--azul);
+    margin-bottom:15px;
+}
+
+.banner ul{
+    margin-top:20px;
+    margin-left:20px;
+}
+
+.banner li{
+    margin-bottom:10px;
+}
+
