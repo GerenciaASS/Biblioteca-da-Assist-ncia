@@ -2,26 +2,255 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Teste GitHub Pages</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Academia da Aprendizagem</title>
 
 <style>
-body{
-    background:#0057B8;
-    color:white;
-    font-family:Arial,sans-serif;
-    text-align:center;
-    padding:100px;
-}
-</style>
 
+:root{
+    --azul:#0057B8;
+    --azul-claro:#009FE3;
+    --cinza:#F4F6F9;
+    --texto:#2D3748;
+    --branco:#FFFFFF;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:var(--cinza);
+    color:var(--texto);
+}
+
+.hero{
+    background:linear-gradient(135deg,var(--azul),var(--azul-claro));
+    color:white;
+    padding:80px 20px;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    max-width:800px;
+    margin:auto;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:50px 20px;
+}
+
+.search{
+    margin-bottom:40px;
+}
+
+.search input{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    font-size:1rem;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:var(--branco);
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h2{
+    color:var(--azul);
+    margin-bottom:10px;
+}
+
+.card p{
+    line-height:1.6;
+}
+
+.card a{
+    display:inline-block;
+    margin-top:15px;
+    text-decoration:none;
+    color:var(--azul);
+    font-weight:bold;
+}
+
+.destaque{
+    background:white;
+    border-radius:16px;
+    padding:40px;
+    margin-top:50px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+.destaque h2{
+    color:var(--azul);
+    margin-bottom:15px;
+}
+
+footer{
+    margin-top:60px;
+    padding:30px;
+    text-align:center;
+    background:white;
+}
+
+</style>
 </head>
+
 <body>
 
-<h1>🎉 Funcionou!</h1>
+<section class="hero">
+    <h1>🎓 Academia da Aprendizagem</h1>
 
-<p>
-Se você está lendo este texto, o GitHub Pages está funcionando corretamente.
-</p>
+    <p>
+        Portal de conhecimento, formação e desenvolvimento para as equipes.
+    </p>
+</section>
+
+<div class="container">
+
+    <div class="search">
+        <input
+            type="text"
+            id="pesquisa"
+            placeholder="Pesquisar trilhas..."
+        >
+    </div>
+
+    <div class="cards" id="cards">
+
+        <div class="card">
+            <h2>🌱 Pré-Aprendizagem</h2>
+
+            <p>
+                Estudos, conceitos, diagnósticos e iniciativas de
+                preparação para a aprendizagem profissional.
+            </p>
+
+            <a href="pre-aprendizagem.html">
+                Acessar →
+            </a>
+        </div>
+
+        <div class="card">
+            <h2>📘 Aprendizagem Profissional</h2>
+
+            <p>
+                Legislação, fluxos, metodologias e formação dos aprendizes.
+            </p>
+
+            <a href="#">
+                Em construção
+            </a>
+        </div>
+
+        <div class="card">
+            <h2>🤝 Assistência Social</h2>
+
+            <p>
+                Proteção social, inclusão produtiva e atendimento.
+            </p>
+
+            <a href="#">
+                Em construção
+            </a>
+        </div>
+
+        <div class="card">
+            <h2>💻 Educação a Distância</h2>
+
+            <p>
+                Formação online, metodologias ativas e mediação pedagógica.
+            </p>
+
+            <a href="#">
+                Em construção
+            </a>
+        </div>
+
+        <div class="card">
+            <h2>⚖️ Biblioteca Normativa</h2>
+
+            <p>
+                Leis, decretos, resoluções e documentos orientadores.
+            </p>
+
+            <a href="#">
+                Em construção
+            </a>
+        </div>
+
+    </div>
+
+    <div class="destaque">
+
+        <h2>🚀 Sobre a Academia</h2>
+
+        <p>
+            Este espaço foi criado para apoiar a formação contínua,
+            compartilhar conhecimento e fortalecer as práticas de
+            aprendizagem, assistência social, socioaprendizagem
+            e inclusão produtiva.
+        </p>
+
+    </div>
+
+</div>
+
+<footer>
+    Academia da Aprendizagem • Biblioteca da Aprendizagem e Inclusão Produtiva
+</footer>
+
+<script>
+
+const pesquisa = document.getElementById('pesquisa');
+
+pesquisa.addEventListener('keyup', function(){
+
+    let filtro = pesquisa.value.toLowerCase();
+
+    let cards = document.querySelectorAll('.card');
+
+    cards.forEach(function(card){
+
+        let texto = card.innerText.toLowerCase();
+
+        if(texto.includes(filtro)){
+            card.style.display = 'block';
+        }else{
+            card.style.display = 'none';
+        }
+
+    });
+
+});
+
+</script>
 
 </body>
 </html>
